@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "66792450447",
+    "project_id": "animelist2-fff35",
+    "storage_bucket": "animelist2-fff35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66792450447:android:1753536bbff862f62d43fa",
+        "android_client_info": {
+          "package_name": "com.bruno_dsilva.AnimeList2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66792450447-e0tdjpt7h5mr003a0na0b2d2hesclld7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYyD9iI5zZVT8Z_y4r22QHujHIoNIvgU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66792450447-e0tdjpt7h5mr003a0na0b2d2hesclld7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
