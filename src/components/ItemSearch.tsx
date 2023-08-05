@@ -1,6 +1,6 @@
 import { View, Text, FlatList, ImageBackground, Pressable } from "react-native";
 import { EmptyCard } from "./Cards/EmptyCard";
-import { SearchType } from "../@types/api/interfaces";
+import { SearchType } from "../util/types/api/interfaces";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { ActivityIndicator } from "react-native";
 import React from "react";

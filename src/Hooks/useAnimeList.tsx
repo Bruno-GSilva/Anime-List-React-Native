@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { Details } from "../@types/api/details_Interface";
-import { ClientId, BaseUrl } from "../util/Key";
+import { Details } from "../util/types/details_Interface";
 
 export const useAnimeList = () => {
   const [dataAnime, setDataAnime] = useState<Details[]>([]);
@@ -12,9 +11,9 @@ export const useAnimeList = () => {
     const getInfoAnime = async (animeId: number) => {
       try {
         await axios
-          .get(`${BaseUrl}${animeId}?`, {
+          .get(`${process.env.BaseUrl}${animeId}?`, {
             headers: {
-              "X-MAL-CLIENT-ID": ClientId,
+              "X-MAL-CLIENT-ID": process.env.ClientId,
             },
             params: {
               fields:
@@ -25,7 +24,7 @@ export const useAnimeList = () => {
             setDataAnime([res.data]);
           });
       } catch (err) {
-        console.error("deu erro no Pagination");
+        console.error("deu erro no Pagination", err);
       }
     };
     getInfoAnime(animeId);

@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Ways from "./stack.routes";
-import { Icon } from "../util/Icon";
+import { Icon } from "../components/UI/Icon";
 import UserScreen from "../screens/UserScreen";
 import { FontAwesome5 } from "@expo/vector-icons";
 import SeasonScreen from "../screens/SeasonScreen";

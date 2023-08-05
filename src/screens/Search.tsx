@@ -2,12 +2,12 @@ import axios from "axios";
 import * as React from "react";
 import { View } from "react-native";
 
-import ClientId from "../util/Key";
-import { SearchType } from "../@types/api/interfaces";
 
-import Input from "../components/Input";
+
+import Input from "../components/UI/Input";
 import { ItemSearch } from "../components/ItemSearch";
 import { useNavigation } from "@react-navigation/native";
+import { SearchType } from "../util/types/interfaces";
 
 type InputState = {
   DataAnime: [string | number | boolean] | SearchType;
@@ -20,7 +20,7 @@ const SearchAnime = () => {
   const [animeList, setAnimeList] = React.useState<SearchType[]>([]);
   const [page, setPage] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
-  const [DataAnime, setDataAnime] = React.useState<InputState | string>("");
+  const [DataAnime, setDataAnime] = React.useState("");
 
   const fetchAnime = async (AnimeName: string | InputState) => {
     await axios
@@ -30,7 +30,7 @@ const SearchAnime = () => {
           limit: 10,
         },
         headers: {
-          "X-MAL-CLIENT-ID": ClientId,
+          "X-MAL-CLIENT-ID": process.env.ClientId,
         },
       })
       .then((res) => {

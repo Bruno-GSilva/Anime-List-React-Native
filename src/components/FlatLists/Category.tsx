@@ -2,30 +2,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { FlatList } from "react-native";
 
-import { ClientId } from "../../util/Key";
-
-import { SearchType } from "../../@types/api/interfaces";
 import { CardCategory } from "../Cards/CardCategory";
 import { EmptyCard } from "../Cards/EmptyCard";
-
-type categoryType = {
-  category:
-    | 1 // | "Action"
-    | 2 // | "Adventure"
-    | 4 // | "Comedy"
-    | 8 // | "Drama"
-    | 10 // | "Fantasy"
-    | 16 // | "Magic"
-    | 18 // | "Mecha"
-    | 7 // | "Mystery"
-    | 22 // | "Romance"
-    | 24 // | "Science-fiction"
-    | 28 // | "Yaoi"
-    | 37 // | "Supernatural"
-    | 14 // | "Horror"
-    | 30 // | "Sports"
-    | 36; // | "Slice of Life";
-};
+import { SearchType, categoryType } from "../../util/types/interfaces";
+import { BaseUrl, ClientId } from "../../util/key";
 
 export const CategoryAnime = ({ category }: categoryType) => {
   const choiceCategory = {
@@ -36,7 +16,7 @@ export const CategoryAnime = ({ category }: categoryType) => {
 
   const fetchAnime = async () => {
     try {
-      const response = await axios.get(`https://api.myanimelist.net/v2/anime`, {
+      const response = await axios.get(`${BaseUrl}`, {
         params: {
           q: "abcdefghijklmnopqrstuvxyz",
           limit: 20,
@@ -48,11 +28,9 @@ export const CategoryAnime = ({ category }: categoryType) => {
         },
       });
       const animes = response.data.data;
-      // console.log(animes)
       animes.map((item: SearchType) => {
         item.node?.genres.filter((genero) => {
           if (genero.id === choiceCategory.category) {
-            // console.log(`animes filtrados = ${genero.name}`);
             const alreadyExists = animeList.some(
               (anime) => anime.node?.id === item.node?.id
             );
@@ -63,7 +41,7 @@ export const CategoryAnime = ({ category }: categoryType) => {
         });
       });
     } catch (err) {
-      console.error("deu erro nas categorias");
+      console.error("deu erro nas categorias", err);
     }
   };
 

@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Button, View, Text, TextInput, Pressable, Alert } from "react-native";
 import { AuthContext } from "../../App";
-import Input from "../components/Input";
+import Input from "../components/UI/Input";
 
 const Login = (): JSX.Element => {
 

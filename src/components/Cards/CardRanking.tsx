@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { ImageBackground, Pressable, Text, View } from "react-native";
-import { Details } from "../../@types/api/details_Interface";
-import { SearchType } from "../../@types/api/interfaces";
+import { Details } from "../../util/types/details_Interface";
+import { SearchType } from "../../util/types/interfaces";
 
 
 interface CardRankingProp {

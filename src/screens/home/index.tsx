@@ -1,11 +1,10 @@
 import * as React from "react";
 import { ScrollView, SafeAreaView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {useMathRandom } from "../../components/Random";
 
-import { RankingAnime } from "../../components/Api/Ranking";
-import { PressableIcon } from "../../util/Pressable";
+import { RankingAnime } from "../../components/FlatLists/Ranking";
 import { SlideCard } from "../../components/Cards/SlideCard";
+import { PressableIcon } from "../../components/UI/Pressable";
 
 const HomeScreen: React.FC = () => {
   const { navigate } = useNavigation();
@@ -26,7 +25,6 @@ const HomeScreen: React.FC = () => {
             color="white"
             label="Categorias"
             nameIcon="sort-down"
-            // onPress={() => navigate()}
             size={26}
             style={{ marginTop: -5 }}
           />

@@ -1,6 +1,6 @@
 import { ImageBackground, Pressable, Text, View } from "react-native";
-import { CategoryAnime } from "../Api/Category";
-import { Details } from "../../@types/api/details_Interface";
+import { CategoryAnime } from "../FlatLists/Category";
+import { Details } from "../../util/types/details_Interface";
 
 interface CardPaginationProps {
   anime: Details;

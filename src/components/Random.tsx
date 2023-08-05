@@ -9,6 +9,7 @@ export const useMathRandom = () => {
   const [valueRandom, setValueRandom] = useState(InicialValue);
 
   useEffect(() => {
+    console.log(valueRandom)
     setValueRandom(Random(0, valueRandom));
   }, [valueRandom]);
 

@@ -2,7 +2,7 @@ import * as React from "react";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Icon } from "../util/Icon";
+import { Icon } from "./UI/Icon";
 import { User } from "../util/User";
 
 import { AuthContext } from "../routes/stack.routes";

@@ -8,7 +8,7 @@ export const CardSeason = ({ ...anime }) => {
     <Pressable
       className="h-32 w-auto mx-2 my-2 border-2 border-amber-500 overflow-hidden active:border-white rounded-md"
       onPress={() =>
-        navigate("paginationScreen", { AnimeId: anime.item.node?.id })
+        navigate("paginationScreen", { animeeId: anime.item.node?.id })
       }>
       <ImageBackground
         key={anime.item.node?.id}

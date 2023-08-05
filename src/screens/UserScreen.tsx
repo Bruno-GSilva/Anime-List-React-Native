@@ -2,7 +2,7 @@ import * as React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Button, Text, View, Pressable } from "react-native";
-import { Icon } from "../util/Icon";
+import { Icon } from "../components/UI/Icon";
 import { AuthContext } from "../../App";
 
 const UserScreen = () => {

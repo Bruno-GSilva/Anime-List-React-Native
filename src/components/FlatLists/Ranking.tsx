@@ -2,19 +2,19 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { FlatList } from "react-native";
 
-import { Details } from "../../@types/api/details_Interface";
-import { RankingType } from "../../@types/api/interfaces";
-import { BaseUrl, ClientId } from "../../util/Key";
+import { Details } from "../../util/types/details_Interface";
 
 import { Loading } from "../ItemSearch";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { CardRanking } from "../Cards/CardRanking";
+import { RankingType } from "../../util/types/interfaces";
+import { ClientId } from "../../util/key";
 
 interface GetAnimeResponse {
   data: Details[];
 }
 
-export const RankingAnime = ({ ranking }: RankingType) => {
+export const RankingAnime = ({ ranking }: RankingType) => {  
   const choiceRanking: RankingType = {
     ranking: ranking,
   };
@@ -25,7 +25,7 @@ export const RankingAnime = ({ ranking }: RankingType) => {
   const fetchAnime = async () => {
     try {
       const response = await axios.get<GetAnimeResponse>(
-        `${BaseUrl}ranking?ranking_type=${choiceRanking.ranking}`,
+        `https://api.myanimelist.net/v2/anime/ranking?ranking_type=${choiceRanking.ranking}`,
         {
           params: {
             offset: page,
@@ -38,7 +38,7 @@ export const RankingAnime = ({ ranking }: RankingType) => {
       );
 
       const animes = response.data.data;
-
+      
       setAnimeList((prevAnimeList) => {
         const currentAnimeList = prevAnimeList ?? [];
         const newAnimes = animes.filter(
@@ -47,13 +47,15 @@ export const RankingAnime = ({ ranking }: RankingType) => {
         );
         return [...currentAnimeList, ...newAnimes];
       });
+      
       if (page <= 40) {
         setPage((newpage) => newpage + 5);
+        console.log(`adicionou ${page} anime do topo ${animes}`)
       } else {
         setLoading(false);
       }
     } catch (err) {
-      console.error(err);
+      console.error("deu error do no ranking", err);
     }
   };
 

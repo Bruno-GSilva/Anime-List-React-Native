@@ -1,13 +1,11 @@
 import * as React from "react";
-import { useNavigation } from "@react-navigation/native";
 
 import { Text, View, SafeAreaView } from "react-native";
-import { SeasonAnime } from "../components/Api/Season";
+import { SeasonAnime } from "../components/FlatLists/Season";
 import { ScrollView } from "react-native-gesture-handler";
-import { PressableIcon } from "../util/Pressable";
+import { PressableIcon } from "../components/UI/Pressable";
 
 const SeasonScreen = (): JSX.Element => {
-  const { navigate } = useNavigation();
   return (
     <SafeAreaView className="flex-1 p-2 items-center justify-center bg-slate-800">
       <ScrollView>
