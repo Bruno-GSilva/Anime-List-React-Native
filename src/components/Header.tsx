@@ -1,31 +1,24 @@
 import * as React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Icon } from "./UI/Icon";
-import { User } from "../util/User";
-
-import { AuthContext } from "../routes/stack.routes";
+import { Icon, User } from "./UI/Icon";
+import { GlobalContext } from "../contexts/AuthContext";
 
 const Header: React.FC = () => {
   const { navigate } = useNavigation();
-  const { setIsAuth } = React.useContext(AuthContext);
+  const { setIsAuth } = React.useContext(GlobalContext);
   return (
-    <View className="w-full h-20 p-3 flex-row justify-between items-center bg-black">
-      <User name="BS" />
+    <View className="w-full h-20 pt-3 pb-1 px-4 flex-row justify-between items-center bg-slate-900">
+      <Text className="text-xl text-white font-extrabold">AnimeDBolso</Text>
       <View className="flex-row">
         <Icon
-          name="home"
-          color="black"
-          size={26}
-          onPress={() => navigate("homeScreen")}
+          name="search"
+          color="white"
+          size={22}
+          onPress={() => navigate("searchScreen")}
         />
-        <Icon
-          name="sign-out-alt"
-          color="black"
-          size={26}
-          onPress={() => setIsAuth(false)}
-        />
+        <User name="BS" onPress={() => navigate("userScreen")} />
       </View>
     </View>
   );

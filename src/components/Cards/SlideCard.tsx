@@ -1,12 +1,14 @@
 import * as React from "react";
 import axios from "axios";
-import { View, ImageBackground, Image } from "react-native";
+import { Pressable, ImageBackground, Image } from "react-native";
 
 import { EmptyCard } from "./EmptyCard";
 import { RankingType } from "../../util/types/interfaces";
 import { BaseUrl, ClientId } from "../../util/key";
+import { useNavigation } from "@react-navigation/native";
 
 export const SlideCard = () => {
+  const { navigate } = useNavigation();
   const choiceRanking: RankingType = {
     ranking: "upcoming",
   };
@@ -34,7 +36,11 @@ export const SlideCard = () => {
   }, []);
 
   return animeList?.length ? (
-    <View className="relative w-full h-96 items-center rounded-md overflow-hidden">
+    <Pressable
+      className="relative w-full h-96 items-center rounded-md overflow-hidden active:border-amber-500"
+      onPress={() => {
+        navigate("paginationScreen", { animeeId: animeList[4].node?.id });
+      }}>
       <Image
         source={{ uri: `${animeList[4].node?.main_picture?.large}` }}
         resizeMode="cover"
@@ -46,7 +52,7 @@ export const SlideCard = () => {
         className="z-30 absolute w-full h-full rounded-md  overflow-hidden"
         resizeMode="contain"
       />
-    </View>
+    </Pressable>
   ) : (
     <EmptyCard template="SlideCard" />
   );

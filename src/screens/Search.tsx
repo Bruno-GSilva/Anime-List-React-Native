@@ -14,7 +14,7 @@ type InputState = {
   setDataAnime: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const SearchAnime = () => {
+const SearchScreen = () => {
   const { navigate } = useNavigation();
 
   const [animeList, setAnimeList] = React.useState<SearchType[]>([]);
@@ -90,4 +90,4 @@ const SearchAnime = () => {
   );
 };
 
-export default SearchAnime;
+export default SearchScreen;

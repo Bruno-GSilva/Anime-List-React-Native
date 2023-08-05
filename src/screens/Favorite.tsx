@@ -2,7 +2,7 @@ import * as React from 'react'
 import { View, Text, FlatList } from 'react-native'
 import { useAnimeList } from '../Hooks/useAnimeList';
 
-export const FavoriteScreen = () => {
+const FavoriteScreen = () => {
     const { dataAnime, setAnimeId, animeId } = useAnimeList();
 
     React.useEffect(() => {
@@ -22,3 +22,5 @@ export const FavoriteScreen = () => {
         </View>
     )
 }
+
+export default FavoriteScreen;

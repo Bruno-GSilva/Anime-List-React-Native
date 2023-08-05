@@ -4,21 +4,19 @@ import { FlatList } from "react-native";
 
 import { Details } from "../../util/types/details_Interface";
 
-import { Loading } from "../ItemSearch";
+
+import { Loading } from "../UI/Loading";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { CardRanking } from "../Cards/CardRanking";
 import { RankingType } from "../../util/types/interfaces";
 import { ClientId } from "../../util/key";
+import { GetAnimeResponse } from "../../util/types/getAnimeResponse";
 
-interface GetAnimeResponse {
-  data: Details[];
-}
-
-export const RankingAnime = ({ ranking }: RankingType) => {  
+export const RankingAnime = ({ ranking }: RankingType) => {
   const choiceRanking: RankingType = {
     ranking: ranking,
   };
-  const [animeList, setAnimeList] = useState<Details[]>();
+  const [animeList, setAnimeList] = useState<Details[]>([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -37,23 +35,22 @@ export const RankingAnime = ({ ranking }: RankingType) => {
         }
       );
 
-      const animes = response.data.data;
-      
-      setAnimeList((prevAnimeList) => {
-        const currentAnimeList = prevAnimeList ?? [];
-        const newAnimes = animes.filter(
-          (anime) =>
-            !currentAnimeList.some((prevAnime) => prevAnime.id === anime.id)
-        );
-        return [...currentAnimeList, ...newAnimes];
-      });
-      
-      if (page <= 40) {
-        setPage((newpage) => newpage + 5);
-        console.log(`adicionou ${page} anime do topo ${animes}`)
+      const animesData = response.data.data;
+      const animesPaging = response.data.paging.next;
+
+      if (animesPaging) {
+        if (page <= 25) {
+          setPage((page) => page + 5);
+        } else {
+          setLoading(false);
+          return;
+        }
       } else {
         setLoading(false);
+        return;
       }
+
+      setAnimeList((prevAnimes) => prevAnimes.concat(animesData));
     } catch (err) {
       console.error("deu error do no ranking", err);
     }

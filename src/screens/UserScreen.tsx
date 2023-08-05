@@ -3,11 +3,11 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Button, Text, View, Pressable } from "react-native";
 import { Icon } from "../components/UI/Icon";
-import { AuthContext } from "../../App";
+import { GlobalContext } from "../contexts/AuthContext";
 
 const UserScreen = () => {
   const { goBack, navigate } = useNavigation();
-  const { isAuth, setIsAuth } = React.useContext(AuthContext)
+  const { isAuth, setIsAuth } = React.useContext(GlobalContext)
   return (
     <View className="flex-1 bg-black">
       <View className="flex-1">

@@ -5,7 +5,7 @@ import { FlatList } from "react-native";
 import { CardCategory } from "../Cards/CardCategory";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { SearchType, categoryType } from "../../util/types/interfaces";
-import { BaseUrl, ClientId } from "../../util/key";
+import { ClientId } from "../../util/key";
 
 export const CategoryAnime = ({ category }: categoryType) => {
   const choiceCategory = {
@@ -16,7 +16,7 @@ export const CategoryAnime = ({ category }: categoryType) => {
 
   const fetchAnime = async () => {
     try {
-      const response = await axios.get(`${BaseUrl}`, {
+      const response = await axios.get(`https://api.myanimelist.net/v2/anime`, {
         params: {
           q: "abcdefghijklmnopqrstuvxyz",
           limit: 20,
