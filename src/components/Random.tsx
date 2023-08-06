@@ -10,7 +10,7 @@ export const useMathRandom = () => {
 
   useEffect(() => {
     console.log(valueRandom)
-    setValueRandom(Random(0, valueRandom));
+    setValueRandom(Random(0, valueRandom)); // tenho que setar um funcao q faca isso
   }, [valueRandom]);
 
   return { valueRandom, setValueRandom };
