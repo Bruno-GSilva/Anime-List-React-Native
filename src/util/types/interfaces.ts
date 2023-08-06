@@ -1,5 +1,5 @@
 export interface SearchType{
-  node?: {
+  node: {
     id: number;
     title: string;
     main_picture: {

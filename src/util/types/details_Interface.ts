@@ -1,5 +1,5 @@
 export interface Details {
-    id?: number;
+    id: number;
     title?: string;
     main_picture?: {
       medium: string;

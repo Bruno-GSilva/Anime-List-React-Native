@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ImageBackground, Pressable, Text, View } from "react-native";
 import { Details } from "../../util/types/details_Interface";
 import { SearchType } from "../../util/types/interfaces";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { GlobalContext } from "../../contexts/FavoriteContext";
 
 interface CardRankingProp {
   anime: Details & SearchType;
 }
 
 export const CardRanking = ({ anime }: CardRankingProp) => {
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const { navigate } = useNavigation();
+  const { favorites, setFavorites } = useContext(GlobalContext);
+  const [active, setActive] = useState(false);
+
+  const addAnimeFavorites = (animeId: number) => {
+    if (favorites.includes(animeId)) {
+      setFavorites(favorites.filter((id) => id !== animeId));
+    } else {
+      setFavorites([...favorites, animeId]);
+    }
+    setActive(!active);
+  };
 
   return (
     <Pressable
@@ -20,9 +31,9 @@ export const CardRanking = ({ anime }: CardRankingProp) => {
         navigate("paginationScreen", { animeeId: anime.node?.id });
       }}>
       <FontAwesome5
-        name="star"
+        name={"star"}
         color="white"
-        solid={isFavorite}
+        solid={active}
         size={25}
         style={{
           position: "absolute",
@@ -31,7 +42,7 @@ export const CardRanking = ({ anime }: CardRankingProp) => {
           left: 0,
           top: 0,
         }}
-        onPress={() => setIsFavorite(!isFavorite)}
+        onPress={() => addAnimeFavorites(anime.node?.id)}
       />
       <ImageBackground
         key={anime.node?.id}
