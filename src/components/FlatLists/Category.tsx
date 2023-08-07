@@ -5,7 +5,7 @@ import { FlatList } from "react-native";
 import { CardCategory } from "../Cards/CardCategory";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { SearchType, categoryType } from "../../util/types/interfaces";
-import { ClientId } from "../../util/key";
+import { ClientId } from "../../util/KeyUser";
 
 export const CategoryAnime = ({ category }: categoryType) => {
   const choiceCategory = {
@@ -24,7 +24,7 @@ export const CategoryAnime = ({ category }: categoryType) => {
           fields: "genres",
         },
         headers: {
-          "X-MAL-CLIENT-ID": ClientId,
+          "X-MAL-CLIENT-ID": "8029b12661c0bb90c8c39e954b4cf86f",
         },
       });
       const animes = response.data.data;

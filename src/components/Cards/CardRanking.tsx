@@ -7,7 +7,7 @@ import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { GlobalContext } from "../../contexts/FavoriteContext";
 
 interface CardRankingProp {
-  anime: Details & SearchType;
+  anime: SearchType;
 }
 
 export const CardRanking = ({ anime }: CardRankingProp) => {
@@ -29,11 +29,11 @@ export const CardRanking = ({ anime }: CardRankingProp) => {
       className="relative w-32 h-48 mx-1 my-2 border-2 border-amber-500 rounded-md overflow-hidden active:border-white"
       onPress={() => {
         navigate("paginationScreen", { animeeId: anime.node?.id });
-      }}>
-      <FontAwesome5
-        name={"star"}
+      }}
+    >
+      <Ionicons
+        name={active ? "star" : "star-outline"}
         color="white"
-        solid={active}
         size={25}
         style={{
           position: "absolute",
@@ -48,11 +48,13 @@ export const CardRanking = ({ anime }: CardRankingProp) => {
         key={anime.node?.id}
         source={{ uri: `${anime.node?.main_picture?.large}` }}
         resizeMode="cover"
-        className="relative w-full h-full items-center justify-end">
+        className="relative w-full h-full items-center justify-end"
+      >
         <View className="px-3 my-3 rounded-md bg-[#00000060]">
           <Text
             className="max-w-48 text-md text-white font-bold px-1"
-            numberOfLines={1}>
+            numberOfLines={1}
+          >
             {anime.node?.title}
           </Text>
         </View>

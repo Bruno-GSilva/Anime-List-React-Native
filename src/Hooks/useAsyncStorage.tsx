@@ -6,7 +6,6 @@ const useAsyncStorage = () => {
   const storeData = async (keyname: string, value: Details[]) => {
     try {
       const jsonValue = JSON.stringify(value);
-      // console.log("valor setado", value);
       await AsyncStorage.setItem(keyname, jsonValue);
     } catch (e) {
       console.error("error ao salvar", e);

@@ -3,7 +3,7 @@ import React from "react";
 import useAsyncStorage from "./useAsyncStorage";
 
 import { Details } from "../util/types/details_Interface";
-import { BaseUrl, ClientId } from "../util/key";
+import { BaseUrl, ClientId } from "../util/KeyUser";
 import { GlobalContext } from "../contexts/FavoriteContext";
 
 const useAnimeFavorite = () => {

@@ -4,7 +4,7 @@ import { Pressable, ImageBackground, Image } from "react-native";
 
 import { EmptyCard } from "./EmptyCard";
 import { RankingType } from "../../util/types/interfaces";
-import { BaseUrl, ClientId } from "../../util/key";
+import { BaseUrl, ClientId } from "../../util/KeyUser";
 import { useNavigation } from "@react-navigation/native";
 
 export const SlideCard = () => {

@@ -9,11 +9,11 @@ import { Loading } from "../UI/Loading";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { CardRanking } from "../Cards/CardRanking";
 import { RankingType } from "../../util/types/interfaces";
-import { ClientId } from "../../util/key";
+import { ClientId } from "../../util/KeyUser";
 import { GetAnimeResponse } from "../../util/types/getAnimeResponse";
 
 export const RankingAnime = ({ ranking }: RankingType) => {
-  const choiceRanking: RankingType = {
+  const choiceRanking = {
     ranking: ranking,
   };
   const [animeList, setAnimeList] = useState<Details[]>([]);
@@ -30,7 +30,7 @@ export const RankingAnime = ({ ranking }: RankingType) => {
             limit: 5,
           },
           headers: {
-            "X-MAL-CLIENT-ID": ClientId,
+            "X-MAL-CLIENT-ID": "8029b12661c0bb90c8c39e954b4cf86f",
           },
         }
       );

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { BaseUrl, ClientId } from "../util/key";
 
 import { Details } from "../util/types/details_Interface";
 import { Text } from "react-native";
@@ -14,9 +13,9 @@ export const useAnimeList = () => {
   useEffect(() => {
     const getInfoAnime = async (animeId: number) => {
       try {
-        const response = await axios.get<Details>(`${BaseUrl}${animeId}?`, {
+        const response = await axios.get<Details>(`${'https://api.myanimelist.net/v2/anime/'}${animeId}?`, {
           headers: {
-            "X-MAL-CLIENT-ID": ClientId,
+            "X-MAL-CLIENT-ID": "8029b12661c0bb90c8c39e954b4cf86f",
           },
           params: {
             fields:

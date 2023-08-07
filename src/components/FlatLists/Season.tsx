@@ -5,7 +5,7 @@ import { FlatList } from "react-native";
 import { CardSeason } from "../Cards/CardSeason";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { SeasonType } from "../../util/types/interfaces";
-import { BaseUrl, ClientId } from "../../util/key";
+import { BaseUrl, ClientId } from "../../util/KeyUser";
 
 export const SeasonAnime = ({ season, year }: SeasonType) => {
   const choiceSeason: SeasonType = {
