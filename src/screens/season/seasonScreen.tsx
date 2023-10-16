@@ -1,9 +1,9 @@
 import * as React from "react";
 
 import { Text, View, SafeAreaView } from "react-native";
-import { SeasonAnime } from "../components/FlatLists/Season";
+import { SeasonAnime } from "../../components/FlatLists/Season";
 import { ScrollView } from "react-native-gesture-handler";
-import { PressableIcon } from "../components/UI/Pressable";
+import { PressableIcon } from "../../components/UI/Pressable";
 
 const SeasonScreen = (): JSX.Element => {
   return (

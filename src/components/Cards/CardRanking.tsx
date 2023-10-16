@@ -1,10 +1,9 @@
 import { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ImageBackground, Pressable, Text, View } from "react-native";
-import { Details } from "../../util/types/details_Interface";
 import { SearchType } from "../../util/types/interfaces";
-import { FontAwesome5, Ionicons } from "@expo/vector-icons";
-import { GlobalContext } from "../../contexts/FavoriteContext";
+import { Ionicons } from "@expo/vector-icons";
+import { GlobalContext } from "../../contexts/favoriteContext";
 
 interface CardRankingProp {
   anime: SearchType;

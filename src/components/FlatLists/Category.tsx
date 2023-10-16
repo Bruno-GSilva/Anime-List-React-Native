@@ -5,7 +5,6 @@ import { FlatList } from "react-native";
 import { CardCategory } from "../Cards/CardCategory";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { SearchType, categoryType } from "../../util/types/interfaces";
-import { ClientId } from "../../util/KeyUser";
 
 export const CategoryAnime = ({ category }: categoryType) => {
   const choiceCategory = {
@@ -28,6 +27,7 @@ export const CategoryAnime = ({ category }: categoryType) => {
         },
       });
       const animes = response.data.data;
+  
       animes.map((item: SearchType) => {
         item.node?.genres.filter((genero) => {
           if (genero.id === choiceCategory.category) {
@@ -40,6 +40,7 @@ export const CategoryAnime = ({ category }: categoryType) => {
           }
         });
       });
+
     } catch (err) {
       console.error("deu erro nas categorias", err);
     }

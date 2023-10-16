@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Button, Text, View, Pressable } from "react-native";
 import { Icon } from "../components/UI/Icon";
-import { GlobalContext } from "../contexts/AuthContext";
+import { GlobalContext } from "../contexts/authContext";
 
 const UserScreen = () => {
   const { goBack, navigate } = useNavigation();

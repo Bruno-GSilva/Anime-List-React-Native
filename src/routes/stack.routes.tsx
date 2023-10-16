@@ -5,14 +5,11 @@ import {
 } from "@react-navigation/native-stack";
 
 // screens
-import Login from "../screens/login";
-import Register from "../screens/Register";
-import UserScreen from "../screens/UserScreen";
-import PaginationScreen from "../screens/home/Pagination";
+import UserScreen from "../screens/userScreen";
+import PaginationScreen from "../screens/pagination/paginationScreen";
 import { TabNavigate } from "./tabs.routes";
 import Header from "../components/Header";
-import SearchScreen from "../screens/Search";
-import Input from "../components/UI/Input";
+import SearchScreen from "../screens/search/searchScreen";
 
 const StackNavigate = () => {
   const { Group, Navigator, Screen } = createNativeStackNavigator();
@@ -38,7 +35,8 @@ const StackNavigate = () => {
           headerStyle: { backgroundColor: "#0f172a" },
           headerTintColor: "#fff",
           animation: "slide_from_right",
-        }}>
+        }}
+      >
         <Screen
           name="userScreen"
           component={UserScreen}

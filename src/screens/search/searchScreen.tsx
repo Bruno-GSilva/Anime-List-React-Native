@@ -4,10 +4,10 @@ import { View } from "react-native";
 
 
 
-import Input from "../components/UI/Input";
-import { ItemSearch } from "../components/ItemSearch";
+import Input from "../../components/UI/Input";
+import { ItemSearch } from "../../components/ItemSearch";
 import { useNavigation } from "@react-navigation/native";
-import { SearchType } from "../util/types/interfaces";
+import { SearchType } from "../../util/types/interfaces";
 
 type InputState = {
   DataAnime: [string | number | boolean] | SearchType;

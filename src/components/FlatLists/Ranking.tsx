@@ -9,7 +9,6 @@ import { Loading } from "../UI/Loading";
 import { EmptyCard } from "../Cards/EmptyCard";
 import { CardRanking } from "../Cards/CardRanking";
 import { RankingType } from "../../util/types/interfaces";
-import { ClientId } from "../../util/KeyUser";
 import { GetAnimeResponse } from "../../util/types/getAnimeResponse";
 
 export const RankingAnime = ({ ranking }: RankingType) => {

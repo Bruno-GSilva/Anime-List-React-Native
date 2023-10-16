@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { Icon, User } from "./UI/Icon";
-import { GlobalContext } from "../contexts/AuthContext";
+import { GlobalContext } from "../contexts/authContext";
 
 const Header: React.FC = () => {
   const { navigate } = useNavigation();
