@@ -1,13 +1,15 @@
 import * as React from "react";
-import { useNavigation } from "@react-navigation/native";
-
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { Button, Text, View, Pressable } from "react-native";
 import { Icon } from "../components/UI/Icon";
-import { GlobalContext } from "../contexts/authContext";
 
 const UserScreen = () => {
-  const { goBack, navigate } = useNavigation();
-  const { isAuth, setIsAuth } = React.useContext(GlobalContext)
+  const auth = getAuth()
+  const [name, setName] = React.useState('')
+
+  onAuthStateChanged(auth ,(user)=>{
+    return setName(user?.email!);
+  })
   return (
     <View className="flex-1 bg-black">
       <View className="flex-1">
@@ -26,7 +28,6 @@ const UserScreen = () => {
         <View className="w-full flex-row items-center p-4 bg-amber-500 my-1">
           <Icon name="list-ul" size={21} color="white" />
           <Text className="text-2xl font-semibold text-white">
-            Minha Lista 3
           </Text>
         </View>
       </View>

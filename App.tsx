@@ -8,11 +8,11 @@ import StackNavigate from "./src/routes/stack.routes";
 
 const App = () => {
   return (
-      <NavigationContainer>
-        {/* <AuthContext> */}
+    <NavigationContainer>
+      <AuthContext>
         <StackNavigate />
-        {/* </AuthContext> */}
-      </NavigationContainer>
+      </AuthContext>     
+    </NavigationContainer>
   );
 };
 
