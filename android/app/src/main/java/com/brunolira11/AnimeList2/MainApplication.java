@@ -1,4 +1,4 @@
-package com.bruno_dsilva.AnimeList2;
+package com.brunolira11.AnimeList2;
 
 import android.app.Application;
 import android.content.res.Configuration;

@@ -1,4 +1,4 @@
-package com.bruno_dsilva.AnimeList2;
+package com.brunolira11.AnimeList2;
 
 import android.os.Build;
 import android.os.Bundle;
