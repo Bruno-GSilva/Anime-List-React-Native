@@ -1,14 +1,16 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, useState } from "react";
 import { Text, TextInput, View } from "react-native";
 import Icon from "@expo/vector-icons/FontAwesome5";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputlabel?: string;
   iconLabel: string;
+  securityIcon?: boolean;
   onChangeText?: () => void;
 }
 
-const Input = ({ ...props }: InputProps): JSX.Element => {
+export const Input = ({ ...props }: InputProps): JSX.Element => {
+  const [lock, setLock] = useState<boolean>(true);
   return (
     <>
       {props.inputlabel && (
@@ -28,7 +30,22 @@ const Input = ({ ...props }: InputProps): JSX.Element => {
             zIndex: 30,
           }}
         />
+        {props.securityIcon && (
+          <Icon
+            name={"eye"}
+            size={18}
+            color={"#fff"}
+            style={{
+              position: "absolute",
+              right: 0,
+              margin: 13,
+              zIndex: 30,
+            }}
+            onPress={() => setLock(!lock)}
+          />
+        )}
         <TextInput
+          secureTextEntry={props.securityIcon ? lock : false}
           onChangeText={props.onChangeText}
           placeholderTextColor={"gray"}
           {...props}
@@ -37,4 +54,3 @@ const Input = ({ ...props }: InputProps): JSX.Element => {
     </>
   );
 };
-export default Input;

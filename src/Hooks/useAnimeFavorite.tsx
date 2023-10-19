@@ -29,12 +29,12 @@ const useAnimeFavorite = () => {
         );
         const newData = responses.map((res) => res.data);
         setFavoritesData(newData);
-        // storeData("favorites", newData);
+        storeData("favorites", newData);
       } catch (error) {
         console.error("error na requisicão", error);
       }
     };
-    // getData("favorites")
+    getData("favorites")
     fetchData(favorites);
   }, [favorites]);
 

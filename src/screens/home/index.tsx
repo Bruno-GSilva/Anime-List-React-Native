@@ -1,13 +1,10 @@
 import * as React from "react";
 import { ScrollView, SafeAreaView, Text, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { RankingAnime } from "../../components/FlatLists/Ranking";
 import { SlideCard } from "../../components/Cards/SlideCard";
-import { PressableIcon } from "../../components/UI/Pressable";
 
 const HomeScreen = () => {
-  const { navigate } = useNavigation();
 
   return (
     <View className="flex-1 bg-purple-600">

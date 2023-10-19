@@ -3,21 +3,35 @@ import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { Icon, User } from "./UI/Icon";
-import { GlobalContext } from "../contexts/authContext";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import useAsyncStorage from "../Hooks/useAsyncStorage";
 
 const Header: React.FC = () => {
-  const { navigate } = useNavigation();
   const [name, setName] = React.useState('')
-  const auth = getAuth()
+  
+  const { navigate } = useNavigation();
+  const { getData } = useAsyncStorage()
+  
+  async function DataLocale() {
+    try {
+      const Auth = await getData("userLoggedIn");
+      const Username = Auth!.email!.split('@')[0][0]
 
-  onAuthStateChanged(auth, (user)=>{
-    if(user){
-      setName(user?.email!.split('@')[0][0])
-    }else{
-      console.log("User is signed out")
+      if (Auth !== null) {
+        if(Auth){
+          setName(Username)
+        }
+        console.log("Opa! Ja tinha alguem logado!");
+      } else {
+        console.log("não tem ninguem logado :<");
+      }
+    } catch (error) {
+      console.error(error);
     }
-  })
+  }
+
+  React.useEffect(()=>{
+    DataLocale()
+  },[])
 
   return (
     <View className="w-full h-20 pt-3 pb-1 px-4 flex-row justify-between items-center bg-slate-900">
