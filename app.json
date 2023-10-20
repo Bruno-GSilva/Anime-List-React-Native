@@ -15,14 +15,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "sdkVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.brunolira11.AnimeList2"
+      "package": "com.brunolira11.AnimeList2",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +35,9 @@
       "eas": {
         "projectId": "10e5014c-efd2-4013-abff-ecd62739a08a"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/10e5014c-efd2-4013-abff-ecd62739a08a"
     }
   }
 }

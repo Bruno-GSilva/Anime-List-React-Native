@@ -1,27 +1,33 @@
 import React, { InputHTMLAttributes, useState } from "react";
-import { Text, TextInput, View } from "react-native";
+import { Text, TextInput, TextInputProps, View } from "react-native";
 import Icon from "@expo/vector-icons/FontAwesome5";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends TextInputProps {
   inputlabel?: string;
   iconLabel: string;
   securityIcon?: boolean;
-  onChangeText?: () => void;
+  onChangeText?: (text: string) => void;
 }
 
-export const Input = ({ ...props }: InputProps): JSX.Element => {
+export const Input = ({
+  iconLabel,
+  securityIcon,
+  onChangeText,
+  inputlabel,
+  ...rest
+}: InputProps): JSX.Element => {
   const [lock, setLock] = useState<boolean>(true);
   return (
     <>
-      {props.inputlabel && (
+      {inputlabel && (
         <Text className="font-medium text-base text-white my-2">
-          {props.inputlabel ? props.inputlabel : "Insira Algo..."}
+          {inputlabel ? inputlabel : "Insira Algo..."}
         </Text>
       )}
 
       <View className="relative w-full my-1 rounded-lg px-14 py-2 border-2 border-white focus:bg-slate-800 focus:border-amber-500">
         <Icon
-          name={props.iconLabel}
+          name={iconLabel}
           size={18}
           color={"#fff"}
           style={{
@@ -30,7 +36,7 @@ export const Input = ({ ...props }: InputProps): JSX.Element => {
             zIndex: 30,
           }}
         />
-        {props.securityIcon && (
+        {securityIcon && (
           <Icon
             name={"eye"}
             size={18}
@@ -45,10 +51,10 @@ export const Input = ({ ...props }: InputProps): JSX.Element => {
           />
         )}
         <TextInput
-          secureTextEntry={props.securityIcon ? lock : false}
-          onChangeText={props.onChangeText}
+          secureTextEntry={securityIcon ? lock : false}
+          onChangeText={() => onChangeText}
           placeholderTextColor={"gray"}
-          {...props}
+          {...rest}
         />
       </View>
     </>

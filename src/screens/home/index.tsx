@@ -5,7 +5,6 @@ import { RankingAnime } from "../../components/FlatLists/Ranking";
 import { SlideCard } from "../../components/Cards/SlideCard";
 
 const HomeScreen = () => {
-
   return (
     <View className="flex-1 bg-purple-600">
       <ScrollView>

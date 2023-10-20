@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import * as FileSystem from 'expo-file-system';
 import "react-native-gesture-handler";
 
 import { NavigationContainer } from "@react-navigation/native";
