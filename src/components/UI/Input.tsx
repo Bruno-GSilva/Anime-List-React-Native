@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useState } from "react";
+import React, { useState } from "react";
 import { Text, TextInput, TextInputProps, View } from "react-native";
 import Icon from "@expo/vector-icons/FontAwesome5";
 
@@ -52,7 +52,7 @@ export const Input = ({
         )}
         <TextInput
           secureTextEntry={securityIcon ? lock : false}
-          onChangeText={() => onChangeText}
+          onChangeText={onChangeText}
           placeholderTextColor={"gray"}
           {...rest}
         />

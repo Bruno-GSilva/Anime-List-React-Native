@@ -1,17 +1,20 @@
 import * as React from "react";
-import { View, Text, ImageBackground, Pressable } from "react-native";
+import Icon from "@expo/vector-icons/FontAwesome5";
 
+import { View, Text, ImageBackground, Pressable } from "react-native";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+import NetInfo from "@react-native-community/netinfo";
+
+import useAsyncStorage from "../../Hooks/useAsyncStorage";
+import { GlobalContext } from "../../contexts/authContext";
 
 import { Input } from "../../components/UI/Input";
 import { Button } from "../../components/UI/Button";
-import useAsyncStorage from "../../Hooks/useAsyncStorage";
-import { GlobalContext } from "../../contexts/authContext";
-import Icon from "@expo/vector-icons/FontAwesome5";
 
 const Login = () => {
-  const [email, setEmail] = React.useState();
-  const [password, setPassword] = React.useState();
+  const [email, setEmail] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
 
   const Auth = getAuth();
 
@@ -26,6 +29,7 @@ const Login = () => {
         if (user !== null) {
           storeData("userLoggedIn", user);
           setIsAuth(true);
+          console.log(user.uid);
         } else {
           console.log("usuario não existe!");
         }
@@ -38,6 +42,13 @@ const Login = () => {
   const noValidation = () => {
     setIsAuth(true);
   };
+
+  // React.useEffect(()=>{
+  NetInfo.fetch().then((state) => {
+    console.log("Connection type", state.type);
+    console.log("Is connected?", state.isConnected);
+  });
+  // },[])
 
   return (
     <ImageBackground
@@ -71,6 +82,7 @@ const Login = () => {
           onPress={Validation}
           className="bg-amber-500 my-4"
         />
+        {/* <Text className="text-sky-100 text-center text-xl my-2">ou</Text>
         <View className="w-full justify-center flex-row">
           <Pressable className="h-12 w-12 rounded-2xl mr-3 my-2 justify-center items-center border-2 border-white active:border-amber-500">
             <Icon name="github" size={23} color={"#fff"} />
@@ -81,7 +93,7 @@ const Login = () => {
           <Pressable className="h-12 w-12 rounded-2xl mr-0 my-2 justify-center items-center border-2 border-white active:border-amber-500">
             <Icon name="facebook" size={23} color={"#fff"} />
           </Pressable>
-        </View>
+        </View> */}
         <Pressable onPress={noValidation}>
           <Text className="text-sky-100 text-center my-2 underline underline-offset-2 active:text-white">
             Pular Etapa
