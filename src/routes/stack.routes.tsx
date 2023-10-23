@@ -11,7 +11,7 @@ import Header from "../components/Header";
 import SearchScreen from "../screens/search/searchScreen";
 import Login from "../screens/authentication/loginScreen";
 import useAsyncStorage from "../Hooks/useAsyncStorage";
-import { GlobalContext } from "../contexts/AuthContext";
+import { GlobalContext } from "../contexts/authContext";
 import UserScreen from "../screens/UserScreen";
 
 const StackNavigate = () => {

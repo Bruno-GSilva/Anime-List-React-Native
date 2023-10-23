@@ -7,9 +7,9 @@ import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 
 import SeasonScreen from "../screens/season/seasonScreen";
 import FavoriteScreen from "../screens/favorite/favoriteScreen";
-import ListScreen from "../screens/lists/ListScreen";
+import ListScreen from "../screens/lists/listScreen";
 import HomeScreen from "../screens/home";
-import FavoriteContext from "../contexts/FavoriteContext";
+import FavoriteContext from "../contexts/favoriteContext";
 
 export const TabNavigate = () => {
   const { navigate } = useNavigation();

@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ImageBackground, Pressable, Text, View } from "react-native";
 import { SearchType } from "../../util/types/interfaces";
 import { Ionicons } from "@expo/vector-icons";
-import { GlobalContext } from "../../contexts/FavoriteContext";
+import { GlobalContext } from "../../contexts/favoriteContext";
 
 interface CardRankingProp {
   anime: SearchType;

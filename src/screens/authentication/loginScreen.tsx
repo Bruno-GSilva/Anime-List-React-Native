@@ -7,7 +7,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import NetInfo from "@react-native-community/netinfo";
 
 import useAsyncStorage from "../../Hooks/useAsyncStorage";
-import { GlobalContext } from "../../contexts/AuthContext";
+import { GlobalContext } from "../../contexts/authContext";
 
 import { Input } from "../../components/UI/Input";
 import { Button } from "../../components/UI/Button";
