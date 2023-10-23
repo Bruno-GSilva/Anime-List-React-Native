@@ -3,7 +3,7 @@ import * as FileSystem from 'expo-file-system';
 import "react-native-gesture-handler";
 
 import { NavigationContainer } from "@react-navigation/native";
-import AuthContext from "./src/contexts/authContext";
+import AuthContext from "./src/contexts/AuthContext";
 import StackNavigate from "./src/routes/stack.routes";
 
 const App = () => {

@@ -5,14 +5,14 @@ import {
 } from "@react-navigation/native-stack";
 
 // screens
-import UserScreen from "../screens/userScreen";
 import PaginationScreen from "../screens/pagination/paginationScreen";
 import { TabNavigate } from "./tabs.routes";
 import Header from "../components/Header";
 import SearchScreen from "../screens/search/searchScreen";
 import Login from "../screens/authentication/loginScreen";
 import useAsyncStorage from "../Hooks/useAsyncStorage";
-import { GlobalContext } from "../contexts/authContext";
+import { GlobalContext } from "../contexts/AuthContext";
+import UserScreen from "../screens/UserScreen";
 
 const StackNavigate = () => {
   const [user, setUser] = React.useState(null);

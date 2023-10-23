@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 import { Text, View, Pressable } from "react-native";
 import { Icon } from "../components/UI/Icon";
 import useAsyncStorage from "../Hooks/useAsyncStorage";
-import { GlobalContext } from "../contexts/authContext";
+import { GlobalContext } from "../contexts/AuthContext";
 
 const UserScreen = () => {
   const auth = getAuth();

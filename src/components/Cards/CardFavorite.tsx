@@ -7,7 +7,7 @@ import {
 import { Details } from "../../util/types/details_Interface";
 import { View, Text, Image } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { GlobalContext } from "../../contexts/favoriteContext";
+import { GlobalContext } from "../../contexts/FavoriteContext";
 
 interface CardFavoriteProps {
   anime: Details;
