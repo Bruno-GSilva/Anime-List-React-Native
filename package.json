@@ -8,6 +8,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-config": "^0.10.7",
     "@expo/vector-icons": "^13.0.0",
     "@react-native-async-storage/async-storage": "1.18.2",
     "@react-native-community/netinfo": "9.3.10",
@@ -19,6 +20,7 @@
     "axios": "^1.4.0",
     "expo": "49.0.0",
     "expo-file-system": "~15.4.4",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "expo-system-ui": "~2.4.0",
     "expo-updates": "~0.18.16",
