@@ -4,6 +4,7 @@ import { ImageBackground, Pressable, Text, View } from "react-native";
 import { SearchType } from "../../util/types/interfaces";
 import { Ionicons } from "@expo/vector-icons";
 import { GlobalContext } from "../../contexts/favoriteContext";
+import useAsyncStorage from "../../Hooks/useAsyncStorage";
 
 interface CardRankingProp {
   anime: SearchType;
@@ -11,7 +12,9 @@ interface CardRankingProp {
 
 export const CardRanking = ({ anime }: CardRankingProp) => {
   const { navigate } = useNavigation();
+
   const { favorites, setFavorites } = useContext(GlobalContext);
+
   const [active, setActive] = useState(false);
 
   const addAnimeFavorites = (animeId: number) => {

@@ -20,11 +20,11 @@ const StackNavigate = () => {
   
   const { Group, Navigator, Screen } = createNativeStackNavigator();
   const { isAuth, setIsAuth } = React.useContext(GlobalContext);
-  const { getData } = useAsyncStorage();
+  const { getStorage } = useAsyncStorage();
 
   async function DataLocale() {
     try {
-      const Auth = await getData("userLoggedIn");
+      const Auth = await getStorage("userLoggedIn");
 
       if (Auth !== null) {
         setUser(Auth);

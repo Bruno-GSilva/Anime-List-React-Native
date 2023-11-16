@@ -3,14 +3,17 @@ import { ScrollView, SafeAreaView, Text, View } from "react-native";
 
 import { RankingAnime } from "../../components/FlatLists/Ranking";
 import { SlideCard } from "../../components/Cards/SlideCard";
+import { Dropdown } from "../../components/UI/dropdown";
 
 const HomeScreen = () => {
   return (
-    <View className="flex-1 bg-purple-600">
+    <View className="flex-1 bg-slate-800">
       <ScrollView>
         <SafeAreaView className="px-3 justify-center bg-slate-800">
-          <View className="flex-row mx-2 my-3 items-center justify-center">
+          <View className="w-full flex-row z-50">
             {/* aqui vai ficar o botao de random e o de categoria */}
+            <Dropdown radius="rounded-bl-3xl" data={["Yaoi", "Ação", "Aventura"]} label="Categorias"/>
+            <Dropdown radius="rounded-br-3xl" data={["Yaoi", "Ação", "Aventura"]} label="Categorias"/>
           </View>
           <SlideCard />
           <Text className="text-white text-2xl font-bold mx-4 my-2">

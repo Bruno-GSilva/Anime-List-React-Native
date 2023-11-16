@@ -18,7 +18,7 @@ const Login = () => {
 
   const Auth = getAuth();
 
-  const { storeData } = useAsyncStorage();
+  const { setStorage } = useAsyncStorage();
   const { setIsAuth } = React.useContext(GlobalContext);
 
   const Validation = async () => {
@@ -27,7 +27,7 @@ const Login = () => {
         const user = Auth.currentUser;
 
         if (user !== null) {
-          storeData("userLoggedIn", user);
+          setStorage("userLoggedIn", user);
           setIsAuth(true);
           console.log(user.uid);
         } else {

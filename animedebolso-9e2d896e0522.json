@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "animedebolso",
+  "private_key_id": "9e2d896e052213237792dcf61009af981f2ef26f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZA7FRq45/Cg+2\nLn5hwAmkk3+huC7nuGFiQlRPKQUQxGd0A3a51cR2Fv47nJKxJ64qNnOPSDXHdN3g\njqv7sx0tJu5F/Gr8exCMWowaz9POXV1azWHIUfI2ElLgKZ9BhTpxwOXxOLkmcRqK\nQTdk6C3F09aqfOR4hhgjecTtjJoWh5NFqFHbyT98a53FnmfU1CRiadygLrb3NWiW\nfhS+u4FfJKbjKsGC+wgvRTPsYX4NrfpcSvobfCKYPlHR+FparEyvdSGvC/SaDwHD\nKdDAwbrz1s4Di8r4MHMSWpi2+DW1cSEC0KSFA1xL4kgfTjZiUQoEowCuTmBkQ3xM\nhN/Z7XlrAgMBAAECggEAER3DoRIiv309orByvLaBnaJOPaXfwVXzts0apzw8b9K4\ni9azWjhaYKdTyxFJq3130wsCRD3cnjIpe6wZ+u7fTaS0NKn2wcV2ZWzfjURAOi5h\nef3NeV4JTRkhoielw+uGTSE515DzzSQLxvlim+wI6r82nR2ZZQ4C9zzw1W3L8scN\nNQPpBa8acU9bVXjNWfofyNpgucA/Xpx8etPN/NRMgQYNNamdvxlPnPvu3+6yzTBl\nGqyefx3UURg99X5UgHqByCVoQ0h+hBZNYjw2Js1c7iKOpqtoSu0+sw5pZZrarEZ/\nrQYX0XjsOnJCyEgmhrtUt1F1e+01xGEMS5L4C5FywQKBgQDX5KRhH9ED68toyX2z\n70yGf6ibQ8C6OBRMy+4QDNaHCVYaIf5Rqidjab8s2g9iNjKnmqogmivbEPHjLYOX\ncoYslOOasFA0ucvcsUFraz8nJxO4C8olDnXP8vy4OggijoddytogvmJJuNTzeo24\n5m9V1vUHL/QmYtKMb0IKrYAuiwKBgQC1cLDCVuf9iECAzXg4CtfEVW1bVlHNb0WY\n1F1+yejXpe3mZ5v+HzBd6H6YNGIBubAcxG59HZHy/UY/28tmBplaXOAVYCJjEp+h\nyUDD7q/g0QFbIwVBQuV/UZztTZy16Rkvl7ji2AdLYG+ErMBAn0LELyPfQUmmcnv7\nrjbeTcscoQKBgQDWjWk3BJGJ3gmWJ7f+2/AnMjLzqo+cASNbdsctuDRymrqw2duO\neRUP3QWao1LqfYY1vqUYJV80JFDfPloqZiwlngnbryDmZUbOGnIzOK/YTyNvonfP\n/+DhOlAhHbr77L1mXrQMGmg/b6piFgdGG+vFWQzFiciPZWJtIhx11BsxJQKBgFqM\nDIpP2KK8FoSxBafiMV+3ykVkxJojR7ZHdQlLNjo4gosTddPSOM8Esfi/W5HE21Df\n7svdr/J111MTG2SlMm7YHrRML50FtEiHKR0exwMJCwYyafLxsZpiXlBHBUf7Nih8\nLTZ33NwPGlg55g/Z6vYBGIPYDytTwvANNzCl3hFBAoGBAKLaOwDmudPjmpZu1YXj\nYzS9f0hwR97T+9LCZRe0Ig5spkXleQ+y+pkOdf4uqpSsKeBvqC8rllaXht361l5G\nfeNLiOW5PE6d0ICtUVa/4SVpV3x4qO/bn/dMRo5L8fJ1GnSn/OVqYuwDuVA8ZoBe\nF/2bb3TLYq1RYyUM7J57Mrb1\n-----END PRIVATE KEY-----\n",
+  "client_email": "animedebolso@animedebolso.iam.gserviceaccount.com",
+  "client_id": "115814814775717586279",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/animedebolso%40animedebolso.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

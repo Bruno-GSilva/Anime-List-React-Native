@@ -7,14 +7,14 @@ import { GlobalContext } from "../contexts/authContext";
 
 const UserScreen = () => {
   const auth = getAuth();
-  const { removeValue } = useAsyncStorage();
+  const { removeStorage } = useAsyncStorage();
   const { setIsAuth } = React.useContext(GlobalContext);
 
   const signOutUser = async () => {
     try {
       await auth.signOut();
       setIsAuth(false);
-      removeValue("userLoggedIn");
+      removeStorage("userLoggedIn");
     } catch (e) {
       console.log(e);
     }

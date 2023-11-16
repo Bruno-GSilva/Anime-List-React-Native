@@ -7,16 +7,18 @@ import useAnimeFavorite from "../../Hooks/useAnimeFavorite";
 
 export const FavoriteAnime = () => {
   const [animeFavorite, setAnimeFavorite] = useState();
-  const { favoritesData } = useAnimeFavorite();
-  const { getData } = useAsyncStorage();
+  const { favoritesData } = useAnimeFavorite()
+
+  const { getStorage, setStorage } = useAsyncStorage();
 
   async function getFavorite() {
-    const animes = await getData("favorites");
+    const animes = await getStorage("favorites");
     setAnimeFavorite(animes);
   }
 
   useEffect(() => {
-    getFavorite();
+    getFavorite()
+    console.log(animeFavorite)
   }, []);
 
   return (
@@ -28,7 +30,7 @@ export const FavoriteAnime = () => {
         Meus Favoritos
       </Animated.Text>
       <FlatList
-        data={favoritesData}
+        data={animeFavorite}
         renderItem={({ item }) => <CardFavorite anime={item} />}
       />
     </View>

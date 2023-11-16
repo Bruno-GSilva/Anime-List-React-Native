@@ -7,7 +7,7 @@ import { BaseUrl, ClientId } from "../util/KeyUser";
 import { GlobalContext } from "../contexts/favoriteContext";
 
 const useAnimeFavorite = () => {
-  const { storeData, getData } = useAsyncStorage();
+  const { setStorage } = useAsyncStorage();
   const { favorites } = React.useContext(GlobalContext);
 
   const [favoritesData, setFavoritesData] = React.useState<Details[]>([]);
@@ -27,14 +27,15 @@ const useAnimeFavorite = () => {
             })
           )
         );
-        const newData = responses.map((res) => res.data);
-        setFavoritesData(newData);
-        storeData("favorites", newData);
+        const animeData = responses.map((res) => res.data);
+        
+        setFavoritesData(animeData);
+        setStorage("favorites", animeData);
+
       } catch (error) {
         console.error("error na requisicão", error);
       }
     };
-    getData("favorites")
     fetchData(favorites);
   }, [favorites]);
 

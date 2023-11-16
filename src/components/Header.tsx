@@ -9,11 +9,11 @@ const Header: React.FC = () => {
   const [name, setName] = React.useState('')
   
   const { navigate } = useNavigation();
-  const { getData } = useAsyncStorage()
+  const { getStorage } = useAsyncStorage()
   
   async function DataLocale() {
     try {
-      const Auth = await getData("userLoggedIn");
+      const Auth = await getStorage("userLoggedIn");
       const Username = Auth!.email!.split('@')[0][0]
 
       if (Auth !== null) {
